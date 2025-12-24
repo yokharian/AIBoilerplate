@@ -10,7 +10,7 @@
 
 <br />
 
-[![Use this template](https://img.shields.io/badge/⚡_Use_this_template-238636?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yokharian/AIBoilerplate/generate/generate)
+[![Use this template](https://img.shields.io/badge/⚡_Use_this_template-238636?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yokharian/AIBoilerplate/generate)
 
 <br />
 
@@ -155,7 +155,7 @@ Every vendor-specific config contains just **one instruction**:
 
 Click the button below to create your own copy:
 
-[![Use this template](https://img.shields.io/badge/⚡_Use_this_template-238636?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yokharian/AIBoilerplate/generate/generate)
+[![Use this template](https://img.shields.io/badge/⚡_Use_this_template-238636?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yokharian/AIBoilerplate/generate)
 
 </td>
 </tr>
@@ -518,7 +518,7 @@ If this helps your team, consider giving it a ⭐
 
 <br />
 
-[![Use this template](https://img.shields.io/badge/⚡_Use_this_template-238636?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yokharian/AIBoilerplate/generate/generate)
+[![Use this template](https://img.shields.io/badge/⚡_Use_this_template-238636?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yokharian/AIBoilerplate/generate)
 
 <br />
 
