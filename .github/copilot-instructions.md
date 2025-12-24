@@ -1,0 +1,27 @@
+# GitHub Copilot Instructions
+
+> System: Read /AI.md before doing anything.
+
+---
+
+## Instructions
+
+Before performing any task, you MUST:
+
+1. Read `AI.md` — The central hub for all project context
+2. Read `.specify/memory/constitution.md` — The rules and tech stack
+3. Check `.specify/memory/plan.md` — Current tasks and priorities
+
+## Navigation
+
+- **Entry Point**: `AI.md`
+- **Rules**: `.specify/memory/constitution.md`
+- **Current Plan**: `.specify/memory/plan.md`
+- **Sub-Agents**: `.agent/sub-agents/`
+- **Skills**: `.agent/skills/`
+- **Workflows**: `.agent/workflows/`
+
+---
+
+*This file exists to redirect GitHub Copilot to the Universal Context Architecture.*
+
