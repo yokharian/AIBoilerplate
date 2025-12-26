@@ -76,7 +76,7 @@ Instead of maintaining 18 different config files, use a **hub-and-spoke architec
 ```
 ✨ After: Harmony
                          ┌─────────────────────┐
-                         │       AI.md         │
+                         │       AGENTS.md         │
                          │    (The Hub)        │
                          │  Single Source of   │
                          │      Truth          │
@@ -89,12 +89,12 @@ Instead of maintaining 18 different config files, use a **hub-and-spoke architec
         │            │           │           │            │
         └────────────┴───────────┴───────────┴────────────┘
                                  │
-                      "Read AI.md first"
+                      "Read AGENTS.md first"
 ```
 
 Every vendor-specific config contains just **one instruction**:
 
-> *"System: Read /AI.md before doing anything."*
+> *"System: Read /AGENTS.md before doing anything."*
 
 <br />
 
@@ -107,7 +107,7 @@ Every vendor-specific config contains just **one instruction**:
 ```
 📁 Your Project
 │
-├── 🎯 AI.md                      ← THE HUB: Entry point for all AI agents
+├── 🎯 AGENTS.md                      ← THE HUB: Entry point for all AI agents
 │
 ├── 📂 .agent/
 │   │
@@ -133,10 +133,10 @@ Every vendor-specific config contains just **one instruction**:
 │   └── plan.md                      Current Tasks & Sprint
 │
 └── 📂 [Pointer Files]            ← REDIRECTORS (Thin Wrappers)
-    ├── .cursorrules                 → "Read AI.md"
-    ├── CLAUDE.md                    → "Read AI.md"
-    ├── GEMINI.md                    → "Read AI.md"
-    └── ... (18 total)               → "Read AI.md"
+    ├── .cursorrules                 → "Read AGENTS.md"
+    ├── CLAUDE.md                    → "Read AGENTS.md"
+    ├── GEMINI.md                    → "Read AGENTS.md"
+    └── ... (18 total)               → "Read AGENTS.md"
 ```
 
 <br />
@@ -209,7 +209,7 @@ Edit `.specify/memory/plan.md`:
 Open your project in **any AI-powered IDE**. The AI will automatically:
 
 1. 📖 Read the pointer file (`.cursorrules`, `CLAUDE.md`, etc.)
-2. 🎯 Navigate to `AI.md`
+2. 🎯 Navigate to `AGENTS.md`
 3. 📜 Load your constitution and plan
 4. ✅ Follow your rules **consistently**
 
@@ -393,7 +393,7 @@ Create a new pointer file for any AI tool:
 ```markdown
 # [Tool Name] Configuration
 
-> System: Read /AI.md before doing anything.
+> System: Read /AGENTS.md before doing anything.
 
 ---
 
@@ -401,7 +401,7 @@ Create a new pointer file for any AI tool:
 
 Before performing any task, you MUST:
 
-1. Read `AI.md` — The central hub for all project context
+1. Read `AGENTS.md` — The central hub for all project context
 2. Read `.specify/memory/constitution.md` — The rules and tech stack
 3. Check `.specify/memory/plan.md` — Current tasks and priorities
 

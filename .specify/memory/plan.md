@@ -14,7 +14,7 @@
 
 ### In Progress 🔄
 
-- [ ] Initialize project structure with AI.md hub
+- [ ] Initialize project structure with AGENTS.md hub
 - [ ] Configure all vendor-specific pointer files
 - [ ] Set up governance documentation
 

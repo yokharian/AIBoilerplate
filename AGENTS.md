@@ -1,4 +1,4 @@
-# AI.md — The Hub
+# AGENTS.md — The Hub
 
 > I am the entry point. Read Constitution, then choose a Sub-Agent.
 
@@ -69,7 +69,7 @@ Choose the right agent for your task:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                         AI.md (HUB)                         │
+│                         AGENTS.md (HUB)                         │
 │                    "The Entry Point"                        │
 └─────────────────────────────────────────────────────────────┘
                               │

@@ -1,6 +1,6 @@
 # Amazon Q Developer Configuration
 
-> System: Read /AI.md before doing anything.
+> System: Read /AGENTS.md before doing anything.
 
 ---
 
@@ -8,13 +8,13 @@
 
 Before performing any task, you MUST:
 
-1. Read `AI.md` — The central hub for all project context
+1. Read `AGENTS.md` — The central hub for all project context
 2. Read `.specify/memory/constitution.md` — The rules and tech stack
 3. Check `.specify/memory/plan.md` — Current tasks and priorities
 
 ## Navigation
 
-- **Entry Point**: `AI.md`
+- **Entry Point**: `AGENTS.md`
 - **Rules**: `.specify/memory/constitution.md`
 - **Current Plan**: `.specify/memory/plan.md`
 - **Sub-Agents**: `.agent/sub-agents/`
