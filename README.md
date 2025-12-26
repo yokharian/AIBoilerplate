@@ -76,8 +76,8 @@ Instead of maintaining 18 different config files, use a **hub-and-spoke architec
 ```
 ✨ After: Harmony
                          ┌─────────────────────┐
-                         │       AGENTS.md         │
-                         │    (The Hub)        │
+                         │     AGENTS.md       │
+                         │     (The Hub)       │
                          │  Single Source of   │
                          │      Truth          │
                          └──────────┬──────────┘
