@@ -69,7 +69,7 @@ Choose the right agent for your task:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                         AGENTS.md (HUB)                         │
+│                     AGENTS.md (HUB)                         │
 │                    "The Entry Point"                        │
 └─────────────────────────────────────────────────────────────┘
                               │
@@ -91,8 +91,3 @@ Choose the right agent for your task:
                     │  pr-review      │
                     └─────────────────┘
 ```
-
----
-
-*This file is the single source of truth. All vendor-specific AI configuration files point here.*
-
