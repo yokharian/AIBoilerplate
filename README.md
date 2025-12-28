@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://img.shields.io/badge/AI_Agents-18+-blueviolet?style=for-the-badge" alt="18+ AI Agents" />
+<img src="https://img.shields.io/badge/AI_Agents-19+-blueviolet?style=for-the-badge" alt="19+ AI Agents" />
 <img src="https://img.shields.io/badge/Zero_Drift-100%25-success?style=for-the-badge" alt="Zero Drift" />
 <img src="https://img.shields.io/badge/Config_Files-1_Hub-orange?style=for-the-badge" alt="1 Hub" />
 
@@ -14,7 +14,7 @@
 
 <br />
 
-*One source of truth for **Cursor, Claude Code, GitHub Copilot, Gemini, Amazon Q,** and **15+ AI coding assistants.***
+*One source of truth for **Cursor, Claude Code, GitHub Copilot, Gemini, Amazon Q,** and **16+ AI coding assistants.***
 
 <br />
 
@@ -71,7 +71,7 @@ You end up with **duplicated rules**, **conflicting instructions**, and AI assis
 
 ### Governor & Consumer Pattern
 
-Instead of maintaining 18 different config files, use a **hub-and-spoke architecture**:
+Instead of maintaining 19 different config files, use a **hub-and-spoke architecture**:
 
 ```
 ✨ After: Harmony
@@ -85,7 +85,7 @@ Instead of maintaining 18 different config files, use a **hub-and-spoke architec
            ┌────────────┬───────────┼───────────┬────────────┐
            │            │           │           │            │
            ▼            ▼           ▼           ▼            ▼
-     .cursorrules  CLAUDE.md   GEMINI.md   copilot.md    18 more...
+     .cursorrules  CLAUDE.md   GEMINI.md   copilot.md    19 more...
         │            │           │           │            │
         └────────────┴───────────┴───────────┴────────────┘
                                  │
@@ -136,7 +136,7 @@ Every vendor-specific config contains just **one instruction**:
     ├── .cursorrules                 → "Read AGENTS.md"
     ├── CLAUDE.md                    → "Read AGENTS.md"
     ├── GEMINI.md                    → "Read AGENTS.md"
-    └── ... (18 total)               → "Read AGENTS.md"
+    └── ... (19 total)               → "Read AGENTS.md"
 ```
 
 <br />
@@ -247,6 +247,7 @@ Open your project in **any AI-powered IDE**. The AI will automatically:
 | **Jules** | `.jules` | ✅ |
 | **SHAI** | `.shai` | ✅ |
 | **Codex CLI** | `CODEX.md` | ✅ |
+| **Goose** | `GOOSE.md` | ✅ |
 
 </div>
 
@@ -344,7 +345,7 @@ memory/
 <tr>
 <td>
 
-❌ 18 config files to maintain
+❌ 19 config files to maintain
 
 ❌ Rules drift between tools
 
