@@ -113,19 +113,21 @@ Every vendor-specific config contains just **one instruction**:
 ├── 📂 .agents/
 │   │
 │   ├── 📚 skills/                ← KNOWLEDGE (Atomic, Reusable)
-│   │   ├── git.md                   "Here are our Git commands"
-│   │   ├── db.md                    "Here's how to run migrations"
-│   │   ├── test.md                  "Here's how to run tests"
-│   │   └── review-checklist.md      "Here's the PR checklist"
+│   │   ├── create-prd/
+│   │   │   └── SKILL.md             "Create Product Requirements Documents"
+│   │   └── generate-tasks/
+│   │       └── SKILL.md             "Generate task lists from PRDs"
 │   │
 │   └── 🎭 sub-agents/            ← PERSONAS (Specialized Roles)
-│       ├── qa.md                    "I am the QA Engineer"
-│       ├── devops.md                "I am the DevOps Engineer"
-│       └── tech-lead.md             "I am the Tech Lead"
+│       └── project-manager.md       "I am the Project Manager"
 │
 ├── 📂 .specify/memory/           ← GOVERNANCE (The Law)
 │   ├── constitution.md              Tech Stack & Rules
 │   └── plan.md                      Current Tasks & Sprint
+│
+├── 📂 tasks/                      ← OUTPUT (Generated Documents)
+│   ├── prd-[feature-name].md        PRD documents
+│   └── tasks-[feature-name].md       Task lists
 │
 └── 📂 [Pointer Files]            ← REDIRECTORS (Thin Wrappers)
     ├── .cursorrules                 → "Read AGENTS.md"
@@ -218,6 +220,116 @@ Open your project in **any AI-powered IDE**. The AI will automatically:
 
 <br />
 
+## 🚀 Feature Development Workflow
+
+This repository provides a structured workflow for building features with AI assistance, from ideation to implementation.
+
+<details>
+<summary><b>💡 The Core Idea</b></summary>
+
+Building complex features with AI can sometimes feel like a black box. This workflow aims to bring structure, clarity, and control to the process by:
+
+1. **Defining Scope:** Clearly outlining what needs to be built with a Product Requirement Document (PRD).
+2. **Detailed Planning:** Breaking down the PRD into a granular, actionable task list.
+3. **Iterative Implementation:** Guiding the AI to tackle one task at a time, allowing you to review and approve each change.
+
+This structured approach helps ensure the AI stays on track, makes it easier to debug issues, and gives you confidence in the generated code.
+
+</details>
+
+<details>
+<summary><b>📋 Workflow: From Idea to Implemented Feature</b></summary>
+
+Here's the step-by-step process using the skills in this repository:
+
+#### 1. Create a Product Requirement Document (PRD)
+
+First, lay out the blueprint for your feature. A PRD clarifies what you're building, for whom, and why.
+
+You can create a lightweight PRD directly within your AI tool of choice:
+
+1. Ensure you have the `create-prd` skill accessible (`.agents/skills/create-prd/SKILL.md`).
+2. In your AI tool, initiate PRD creation:
+
+    ```text
+    Use @.agents/skills/create-prd/SKILL.md
+    Here's the feature I want to build: [Describe your feature in detail]
+    Reference these files to help you: [Optional: @file1.py @file2.ts]
+    ```
+
+#### 2. Generate Your Task List from the PRD
+
+With your PRD drafted (e.g., `prd-MyFeature.md`), the next step is to generate a detailed, step-by-step implementation plan for your AI Developer.
+
+1. Ensure you have `generate-tasks` skill accessible (`.agents/skills/generate-tasks/SKILL.md`).
+2. In your AI tool, use the PRD to create tasks:
+
+    ```text
+    Now take @prd-MyFeature.md and create tasks using @.agents/skills/generate-tasks/SKILL.md
+    ```
+
+#### 3. Examine Your Task List
+
+You'll now have a well-structured task list, often with tasks and sub-tasks, ready for the AI to start working on. This provides a clear roadmap for implementation.
+
+#### 4. Instruct the AI to Work Through Tasks (and Mark Completion)
+
+To ensure methodical progress and allow for verification, instruct the AI to work through the task list one sub-task at a time.
+
+1. In your AI tool, tell the AI to start with the first task (e.g., `1.1`):
+
+    ```text
+    Please start on task 1.1 from the generated task list.
+    ```
+
+    The AI will attempt the task and then prompt you to review.
+
+#### 5. Progress
+
+The AI will continue working through the remaining tasks in the list, checking them off as completed (`- [ ]` → `- [x]`).
+
+While it's not always perfect, this method has proven to be a very reliable way to build out larger features with AI assistance.
+
+</details>
+
+<details>
+<summary><b>✨ Benefits</b></summary>
+
+* **Structured Development:** Enforces a clear process from idea to code.
+* **Step-by-Step Verification:** Allows you to review and approve AI-generated code at each small step, ensuring quality and control.
+* **Manages Complexity:** Breaks down large features into smaller, digestible tasks for the AI, reducing the chance of it getting lost or generating overly complex, incorrect code.
+* **Improved Reliability:** Offers a more dependable approach to leveraging AI for significant development work compared to single, large prompts.
+* **Clear Progress Tracking:** Provides a visual representation of completed tasks, making it easy to see how much has been done and what's next.
+
+</details>
+
+<details>
+<summary><b>💪 Tips for Success</b></summary>
+
+* **Be Specific:** The more context and clear instructions you provide (both in your initial feature description and any clarifications), the better the AI's output will be.
+* **Correct File Tagging:** Always ensure you're accurately tagging the PRD filename (e.g., `@prd-MyFeature.md`) when generating tasks.
+* **Patience and Iteration:** AI is a powerful tool, but it's not magic. Be prepared to guide, correct, and iterate. This workflow is designed to make that iteration process smoother.
+
+</details>
+
+<details>
+<summary><b>📁 Files in this Repository</b></summary>
+
+* **`.agents/skills/create-prd/SKILL.md`**: Guides the AI in generating a Product Requirement Document for your feature.
+* **`.agents/skills/generate-tasks/SKILL.md`**: Takes a PRD markdown file as input and helps the AI break it down into a detailed, step-by-step implementation task list.
+* **`.agents/sub-agents/project-manager.md`**: The Project Manager sub-agent that orchestrates the PRD and task generation workflow.
+* **`AGENTS.md`**: The central hub that routes AI assistants to the appropriate sub-agents and skills.
+* **`.specify/memory/constitution.md`**: Defines your tech stack, coding standards, and project rules.
+* **`.specify/memory/plan.md`**: Tracks current tasks, sprint goals, and progress.
+
+</details>
+
+<br />
+
+---
+
+<br />
+
 ## 🔌 Supported AI Tools
 
 <div align="center">
@@ -268,10 +380,15 @@ Open your project in **any AI-powered IDE**. The AI will automatically:
 Each skill is a reusable piece of domain knowledge.
 
 ```
-git.md
-├─ Branch naming
-├─ Commit format
-└─ PR process
+create-prd/
+├─ PRD structure
+├─ Clarifying questions
+└─ Requirements format
+
+generate-tasks/
+├─ Task breakdown
+├─ Sub-task generation
+└─ Progress tracking
 ```
 
 </td>
@@ -282,9 +399,10 @@ git.md
 Sub-agents are experts that use specific skills.
 
 ```
-qa.md
-├─ Uses: test.md
-└─ Focus: Quality
+project-manager.md
+├─ Uses: create-prd
+├─ Uses: generate-tasks
+└─ Focus: Feature development
 ```
 
 </td>
@@ -396,23 +514,31 @@ Before performing any task, you MUST:
 
 <br />
 
-1. Create a file in `.agents/skills/`
-2. Start with a tagline: `> Here is how to [do X].`
-3. Add commands, conventions, examples
+1. Create a directory in `.agents/skills/` (e.g., `my-skill/`)
+2. Create a `SKILL.md` file inside the directory
+3. Follow the format of existing skills (see `.agents/skills/create-prd/SKILL.md` for reference)
+4. Include metadata, goal, process, and output format
 
 **Example:**
 
 ```markdown
-# Docker Skill
+---
+name: my-skill
+description: Brief description of what this skill does
+---
 
-> Here is how to build and run containers.
+# My Skill
 
-## Commands
+## Goal
+To accomplish X...
 
-\`\`\`bash
-docker build -t myapp .
-docker run -p 3000:3000 myapp
-\`\`\`
+## Process
+1. Step one
+2. Step two
+
+## Output
+- Format: Markdown
+- Location: `/output/`
 ```
 
 </details>
@@ -425,7 +551,7 @@ docker run -p 3000:3000 myapp
 1. Create a file in `.agents/sub-agents/`
 2. Define the persona and role
 3. List which skills it uses
-4. Add specific instructions
+4. Add specific instructions and workflow
 
 **Example:**
 
@@ -435,12 +561,17 @@ docker run -p 3000:3000 myapp
 > I am the Security Engineer. I review code for vulnerabilities.
 
 ## My Skills
-- `.agents/skills/review-checklist.md`
+- `.agents/skills/security-audit/SKILL.md`
 
 ## My Focus
 - OWASP Top 10
 - Input validation
 - Authentication flows
+
+## My Workflow
+1. Review code for security issues
+2. Generate security report
+3. Recommend fixes
 ```
 
 </details>

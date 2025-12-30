@@ -25,22 +25,18 @@
 
 Choose the right agent for your task:
 
-| Agent           | File                              | Specialty                             |
-|-----------------|-----------------------------------|---------------------------------------|
-| QA Engineer     | `.agents/sub-agents/qa.md`        | Testing, bug fixes, quality assurance |
-| DevOps Engineer | `.agents/sub-agents/devops.md`    | Deployment, CI/CD, infrastructure     |
-| Tech Lead       | `.agents/sub-agents/tech-lead.md` | PR reviews, architecture decisions    |
+| Agent           | File                                    | Specialty                                    |
+|-----------------|-----------------------------------------|----------------------------------------------|
+| Project Manager | `.agents/sub-agents/project-manager.md` | PRD creation, task generation, progress tracking |
 
 ---
 
 ### 🛠️ Skills (Atomic Knowledge)
 
-| Skill            | File                                 | Description                            |
-|------------------|--------------------------------------|----------------------------------------|
-| Git              | `.agents/skills/git.md`              | Standard Git commands and conventions  |
-| Database         | `.agents/skills/db.md`               | SQL queries and migrations             |
-| Testing          | `.agents/skills/test.md`             | Jest, Playwright, and testing patterns |
-| Review Checklist | `.agents/skills/review-checklist.md` | PR review checklist                    |
+| Skill         | File                              | Description                                    |
+|---------------|-----------------------------------|------------------------------------------------|
+| Create PRD    | `.agents/skills/create-prd/SKILL.md` | Create Product Requirements Documents         |
+| Generate Tasks | `.agents/skills/generate-tasks/SKILL.md` | Generate step-by-step task lists from PRDs   |
 
 ---
 
@@ -65,8 +61,7 @@ Choose the right agent for your task:
           ▼                   ▼                   ▼
 ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
 │   GOVERNANCE    │ │   SUB-AGENTS    │ │     SKILLS      │
-│  constitution   │ │   qa.md         │ │   git.md        │
-│  plan.md        │ │   devops.md     │ │   db.md         │
-│                 │ │   tech-lead.md  │ │   test.md       │
+│  constitution   │ │ project-manager │ │  create-prd     │
+│  plan.md        │ │                 │ │  generate-tasks │
 └─────────────────┘ └─────────────────┘ └─────────────────┘
 ```
