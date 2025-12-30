@@ -59,7 +59,8 @@ We're in the era of **Multi-Vendor AI Development**. Your team might be using:
    conventions      conventions      conventions      conventions
 ```
 
-You end up with **duplicated rules**, **conflicting instructions**, and AI assistants that **hallucinate different project conventions**.
+You end up with **duplicated rules**, **conflicting instructions**, and AI assistants that **hallucinate different
+project conventions**.
 
 <br />
 
@@ -109,19 +110,13 @@ Every vendor-specific config contains just **one instruction**:
 │
 ├── 🎯 AGENTS.md                      ← THE HUB: Entry point for all AI agents
 │
-├── 📂 .agent/
+├── 📂 .agents/
 │   │
 │   ├── 📚 skills/                ← KNOWLEDGE (Atomic, Reusable)
 │   │   ├── git.md                   "Here are our Git commands"
 │   │   ├── db.md                    "Here's how to run migrations"
 │   │   ├── test.md                  "Here's how to run tests"
 │   │   └── review-checklist.md      "Here's the PR checklist"
-│   │
-│   ├── 🔄 workflows/             ← PROCESSES (Step-by-step)
-│   │   ├── feature-dev.md           Plan → Code → Test
-│   │   ├── bug-fix.md               Reproduce → Fix → Verify
-│   │   ├── deploy.md                Lint → Build → Ship
-│   │   └── pr-review.md             Fetch → Review → Approve
 │   │
 │   └── 🎭 sub-agents/            ← PERSONAS (Specialized Roles)
 │       ├── qa.md                    "I am the QA Engineer"
@@ -227,27 +222,27 @@ Open your project in **any AI-powered IDE**. The AI will automatically:
 
 <div align="center">
 
-| IDE / CLI | Config File | Status |
-|:---------:|:-----------:|:------:|
-| **Cursor** | `.cursorrules` | ✅ |
-| **Windsurf** | `.windsurfrules` | ✅ |
-| **Roo Code / Cline** | `.clinerules` | ✅ |
-| **GitHub Copilot** | `.github/copilot-instructions.md` | ✅ |
-| **Claude Code** | `CLAUDE.md` | ✅ |
-| **Gemini CLI** | `GEMINI.md` | ✅ |
-| **Amazon Q** | `AMAZON_Q.md` | ✅ |
-| **Auggie CLI** | `.auggie.md` | ✅ |
-| **CodeBuddy** | `.codebuddy` | ✅ |
-| **Qoder** | `.qoder/context.md` | ✅ |
-| **OpenCode** | `.opencode` | ✅ |
-| **Amp** | `.amp.md` | ✅ |
-| **Kilo Code** | `.kilo` | ✅ |
-| **Qwen Code** | `.qwen` | ✅ |
-| **IBM Bob** | `.bob/config` | ✅ |
-| **Jules** | `.jules` | ✅ |
-| **SHAI** | `.shai` | ✅ |
-| **Codex CLI** | `CODEX.md` | ✅ |
-| **Goose** | `GOOSE.md` | ✅ |
+|      IDE / CLI       |            Config File            | Status |
+|:--------------------:|:---------------------------------:|:------:|
+|      **Cursor**      |          `.cursorrules`           |   ✅    |
+|     **Windsurf**     |         `.windsurfrules`          |   ✅    |
+| **Roo Code / Cline** |           `.clinerules`           |   ✅    |
+|  **GitHub Copilot**  | `.github/copilot-instructions.md` |   ✅    |
+|   **Claude Code**    |            `CLAUDE.md`            |   ✅    |
+|    **Gemini CLI**    |            `GEMINI.md`            |   ✅    |
+|     **Amazon Q**     |           `AMAZON_Q.md`           |   ✅    |
+|    **Auggie CLI**    |           `.auggie.md`            |   ✅    |
+|    **CodeBuddy**     |           `.codebuddy`            |   ✅    |
+|      **Qoder**       |        `.qoder/context.md`        |   ✅    |
+|     **OpenCode**     |            `.opencode`            |   ✅    |
+|       **Amp**        |             `.amp.md`             |   ✅    |
+|    **Kilo Code**     |              `.kilo`              |   ✅    |
+|    **Qwen Code**     |              `.qwen`              |   ✅    |
+|     **IBM Bob**      |           `.bob/config`           |   ✅    |
+|      **Jules**       |             `.jules`              |   ✅    |
+|       **SHAI**       |              `.shai`              |   ✅    |
+|    **Codex CLI**     |            `CODEX.md`             |   ✅    |
+|      **Goose**       |            `GOOSE.md`             |   ✅    |
 
 </div>
 
@@ -261,10 +256,9 @@ Open your project in **any AI-powered IDE**. The AI will automatically:
 
 <table>
 <tr>
-<th width="25%">📚 Skills</th>
-<th width="25%">🔄 Workflows</th>
-<th width="25%">🎭 Sub-Agents</th>
-<th width="25%">📜 Governance</th>
+<th width="33%">📚 Skills</th>
+<th width="33%">🎭 Sub-Agents</th>
+<th width="33%">📜 Governance</th>
 </tr>
 <tr>
 <td valign="top">
@@ -283,29 +277,13 @@ git.md
 </td>
 <td valign="top">
 
-**Step-by-step processes**
-
-Workflows chain skills into complete procedures.
-
-```
-feature-dev.md
-├─ Step 1: Plan
-├─ Step 2: Code
-└─ Step 3: Test ↗️
-         └── test.md
-```
-
-</td>
-<td valign="top">
-
 **Specialized personas**
 
-Sub-agents are experts that use specific skills & workflows.
+Sub-agents are experts that use specific skills.
 
 ```
 qa.md
 ├─ Uses: test.md
-├─ Uses: bug-fix.md
 └─ Focus: Quality
 ```
 
@@ -418,10 +396,9 @@ Before performing any task, you MUST:
 
 <br />
 
-1. Create a file in `.agent/skills/`
+1. Create a file in `.agents/skills/`
 2. Start with a tagline: `> Here is how to [do X].`
 3. Add commands, conventions, examples
-4. Reference it from relevant workflows
 
 **Example:**
 
@@ -441,44 +418,13 @@ docker run -p 3000:3000 myapp
 </details>
 
 <details>
-<summary><b>🔄 Adding a New Workflow</b></summary>
-
-<br />
-
-1. Create a file in `.agent/workflows/`
-2. Define numbered steps
-3. Reference skills with links
-4. Keep it action-oriented
-
-**Example:**
-
-```markdown
-# Hotfix Workflow
-
-> Step 1: Branch. Step 2: Fix. Step 3: Deploy.
-
-## Step 1: Create Hotfix Branch
-
-Reference: `.agent/skills/git.md`
-
-\`\`\`bash
-git checkout -b hotfix/critical-issue main
-\`\`\`
-
-## Step 2: Apply Fix
-...
-```
-
-</details>
-
-<details>
 <summary><b>🎭 Adding a New Sub-Agent</b></summary>
 
 <br />
 
-1. Create a file in `.agent/sub-agents/`
+1. Create a file in `.agents/sub-agents/`
 2. Define the persona and role
-3. List which skills and workflows it uses
+3. List which skills it uses
 4. Add specific instructions
 
 **Example:**
@@ -489,7 +435,7 @@ git checkout -b hotfix/critical-issue main
 > I am the Security Engineer. I review code for vulnerabilities.
 
 ## My Skills
-- `.agent/skills/review-checklist.md`
+- `.agents/skills/review-checklist.md`
 
 ## My Focus
 - OWASP Top 10

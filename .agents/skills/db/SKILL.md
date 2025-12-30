@@ -1,3 +1,8 @@
+---
+name: db
+description: Provides guidance on database operations using PostgreSQL and Prisma ORM. Use when working with database schemas, migrations, queries, or when the user asks about database operations, SQL, Prisma commands, or database patterns.
+---
+
 # Database Skill
 
 > Here is how to run SQL and migrations.

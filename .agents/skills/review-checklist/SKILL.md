@@ -1,3 +1,8 @@
+---
+name: review-checklist
+description: Provides a comprehensive checklist for reviewing Pull Requests. Use when reviewing code, checking PRs, or when the user asks about code review standards, PR review process, or quality assurance checks.
+---
+
 # Review Checklist
 
 > Here is the list of things to check in a PR.

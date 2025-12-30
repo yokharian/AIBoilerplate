@@ -34,11 +34,11 @@
 
 ## 📊 Sprint Metrics
 
-| Metric | Target | Current |
-|--------|--------|---------|
-| Tasks Completed | 10 | 3 |
-| Test Coverage | 80% | 0% |
-| Bugs Found | 0 | 0 |
+| Metric          | Target | Current |
+|-----------------|--------|---------|
+| Tasks Completed | 10     | 3       |
+| Test Coverage   | 80%    | 0%      |
+| Bugs Found      | 0      | 0       |
 
 ---
 
@@ -61,7 +61,6 @@ Week 2: Enhancement
 ## 📝 Notes
 
 - Remember to run tests before committing
-- Follow the workflows defined in `.agent/workflows/`
 - Check with Tech Lead for architecture decisions
 
 ---
@@ -69,8 +68,7 @@ Week 2: Enhancement
 ## 🔗 Related Documents
 
 - Constitution: `.specify/memory/constitution.md`
-- Feature Dev Workflow: `.agent/workflows/feature-dev.md`
-- Testing Guide: `.agent/skills/test.md`
+- Testing Guide: `.agents/skills/test.md`
 
 ---
 

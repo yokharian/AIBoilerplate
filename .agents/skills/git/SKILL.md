@@ -1,3 +1,8 @@
+---
+name: git
+description: Provides standard Git commands and conventions for version control. Use when working with Git branches, commits, pull requests, or when the user asks about Git, branch naming, commit messages, or version control operations.
+---
+
 # Git Skill
 
 > Here are the standard Git commands we use.

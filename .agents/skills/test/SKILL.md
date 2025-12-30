@@ -1,3 +1,8 @@
+---
+name: test
+description: Provides guidance on testing with Jest and Playwright. Use when writing tests, running test suites, or when the user asks about unit tests, integration tests, E2E tests, test coverage, or testing patterns.
+---
+
 # Testing Skill
 
 > Here is how to run Jest and Playwright.
