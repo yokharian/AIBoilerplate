@@ -187,7 +187,7 @@ Cloud:    AWS
 
 ### Step 3️⃣ &nbsp; Set Your Plan
 
-Edit `.specify/memory/plan.md`:
+The `project-manager` sub-agent automatically maintains `.specify/memory/plan.md` as you work through features. However, you can also manually edit it to set initial sprint goals:
 
 ```markdown
 ## Current Sprint: User Authentication
@@ -199,6 +199,8 @@ Edit `.specify/memory/plan.md`:
 ### Up Next
 - [ ] Two-factor authentication
 ```
+
+**Note:** When you create PRDs and generate tasks using the `project-manager` sub-agent, it will automatically update this plan file with progress, moving tasks between sections and updating metrics as work progresses.
 
 </td>
 </tr>
@@ -224,110 +226,46 @@ Open your project in **any AI-powered IDE**. The AI will automatically:
 
 <br />
 
-## 🚀 Feature Development Workflow
+## Feature Development Workflow
 
-This repository provides a structured workflow for building features with AI assistance, from ideation to implementation.
+Build features step-by-step with AI: define requirements, plan tasks, and implement iteratively.
 
-<details>
-<summary><b>💡 The Core Idea</b></summary>
+### Quick Guide
 
-Building complex features with AI can sometimes feel like a black box. This workflow aims to bring structure, clarity, and control to the process by:
+**1. Create a PRD** (Product Requirements Document)
 
-1. **Defining Scope:** Clearly outlining what needs to be built with a Product Requirement Document (PRD).
-2. **Detailed Planning:** Breaking down the PRD into a granular, actionable task list.
-3. **Iterative Implementation:** Guiding the AI to tackle one task at a time, allowing you to review and approve each change.
+```text
+Use @.agents/sub-agents/project-manager.md
+I want to build a feature: [Describe your feature]
+```
 
-This structured approach helps ensure the AI stays on track, makes it easier to debug issues, and gives you confidence in the generated code.
+The PRD is saved to `.specify/features/[feature-name]/prd.md`.
 
-</details>
+**2. Generate Tasks**
 
-<details>
-<summary><b>📋 Workflow: From Idea to Implemented Feature</b></summary>
+```text
+Take @.specify/features/my-feature/prd.md and generate tasks using @.agents/skills/generate-tasks/SKILL.md
+```
 
-Here's the step-by-step process using the skills in this repository:
+Tasks are saved to `.specify/features/[feature-name]/tasks.md`.
 
-#### 1. Create a Product Requirement Document (PRD)
+**3. Implement Tasks**
 
-First, lay out the blueprint for your feature. A PRD clarifies what you're building, for whom, and why.
+```text
+Please start on task 1.1 from @.specify/features/my-feature/tasks.md
+```
 
-You can create a lightweight PRD directly within your AI tool of choice:
+The AI will implement one task at a time. Review and approve each change before moving to the next task.
 
-1. Ensure you have the `create-prd` skill accessible (`.agents/skills/create-prd/SKILL.md`).
-2. In your AI tool, initiate PRD creation:
+**4. Track Progress**
 
-    ```text
-    Use @.agents/skills/create-prd/SKILL.md
-    Here's the feature I want to build: [Describe your feature in detail]
-    Reference these files to help you: [Optional: @file1.py @file2.ts]
-    ```
+Tasks are automatically marked complete, and `.specify/memory/plan.md` updates automatically.
 
-#### 2. Generate Your Task List from the PRD
+### Tips
 
-With your PRD drafted (e.g., `.specify/features/my-feature/prd.md`), the next step is to generate a detailed, step-by-step implementation plan for your AI Developer.
-
-1. Ensure you have `generate-tasks` skill accessible (`.agents/skills/generate-tasks/SKILL.md`).
-2. In your AI tool, use the PRD to create tasks:
-
-    ```text
-    Now take @.specify/features/my-feature/prd.md and create tasks using @.agents/skills/generate-tasks/SKILL.md
-    ```
-
-#### 3. Examine Your Task List
-
-You'll now have a well-structured task list, often with tasks and sub-tasks, ready for the AI to start working on. This provides a clear roadmap for implementation.
-
-#### 4. Instruct the AI to Work Through Tasks (and Mark Completion)
-
-To ensure methodical progress and allow for verification, instruct the AI to work through the task list one sub-task at a time.
-
-1. In your AI tool, tell the AI to start with the first task (e.g., `1.1`):
-
-    ```text
-    Please start on task 1.1 from the generated task list.
-    ```
-
-    The AI will attempt the task and then prompt you to review.
-
-#### 5. Progress
-
-The AI will continue working through the remaining tasks in the list, checking them off as completed (`- [ ]` → `- [x]`).
-
-While it's not always perfect, this method has proven to be a very reliable way to build out larger features with AI assistance.
-
-</details>
-
-<details>
-<summary><b>✨ Benefits</b></summary>
-
-* **Structured Development:** Enforces a clear process from idea to code.
-* **Step-by-Step Verification:** Allows you to review and approve AI-generated code at each small step, ensuring quality and control.
-* **Manages Complexity:** Breaks down large features into smaller, digestible tasks for the AI, reducing the chance of it getting lost or generating overly complex, incorrect code.
-* **Improved Reliability:** Offers a more dependable approach to leveraging AI for significant development work compared to single, large prompts.
-* **Clear Progress Tracking:** Provides a visual representation of completed tasks, making it easy to see how much has been done and what's next.
-
-</details>
-
-<details>
-<summary><b>💪 Tips for Success</b></summary>
-
-* **Be Specific:** The more context and clear instructions you provide (both in your initial feature description and any clarifications), the better the AI's output will be.
-* **Correct File Tagging:** Always ensure you're accurately tagging the PRD file path (e.g., `@.specify/features/my-feature/prd.md`) when generating tasks.
-* **Patience and Iteration:** AI is a powerful tool, but it's not magic. Be prepared to guide, correct, and iterate. This workflow is designed to make that iteration process smoother.
-
-</details>
-
-<details>
-<summary><b>📁 Files in this Repository</b></summary>
-
-* **`.agents/skills/create-prd/SKILL.md`**: Guides the AI in generating a Product Requirement Document for your feature.
-* **`.agents/skills/generate-tasks/SKILL.md`**: Takes a PRD markdown file as input and helps the AI break it down into a detailed, step-by-step implementation task list.
-* **`.agents/sub-agents/ultra-think.md`**: The default sub-agent for all SDLC tasks (coding, refactoring, architecture, debugging, testing). Emphasizes craftsmanship and elegant solutions.
-* **`.agents/sub-agents/project-manager.md`**: The Project Manager sub-agent that orchestrates the PRD and task generation workflow.
-* **`AGENTS.md`**: The central hub that routes AI assistants to the appropriate sub-agents and skills.
-* **`.specify/memory/constitution.md`**: Defines your tech stack, coding standards, and project rules.
-* **`.specify/memory/plan.md`**: Tracks current tasks, sprint goals, and progress.
-
-</details>
+- Be specific when describing features
+- Use `project-manager` for planning, `ultra-think` (default) for coding
+- Review each task before approving the next one
 
 <br />
 
