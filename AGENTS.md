@@ -14,10 +14,10 @@
 
 ### 📜 Governance (The Law)
 
-| File | Purpose |
-|------|---------|
+| File                              | Purpose                                                  |
+|-----------------------------------|----------------------------------------------------------|
 | `.specify/memory/constitution.md` | Tech Stack, Rules, and Constraints. **Never ignore me.** |
-| `.specify/memory/plan.md` | The current Task List. What we are doing right now. |
+| `.specify/memory/plan.md`         | The current Task List. What we are doing right now.      |
 
 ---
 
@@ -25,33 +25,19 @@
 
 Choose the right agent for your task:
 
-| Agent | File | Specialty |
-|-------|------|-----------|
-| QA Engineer | `.agent/sub-agents/qa.md` | Testing, bug fixes, quality assurance |
-| DevOps Engineer | `.agent/sub-agents/devops.md` | Deployment, CI/CD, infrastructure |
-| Tech Lead | `.agent/sub-agents/tech-lead.md` | PR reviews, architecture decisions |
-
----
-
-### 🔄 Workflows (Processes)
-
-| Workflow | File | Steps |
-|----------|------|-------|
-| Feature Development | `.agent/workflows/feature-dev.md` | Plan → Code → Test |
-| Bug Fix | `.agent/workflows/bug-fix.md` | Reproduce → Fix → Verify |
-| Deploy | `.agent/workflows/deploy.md` | Lint → Build → Ship |
-| PR Review | `.agent/workflows/pr-review.md` | Fetch → Review → Approve |
+| Agent                     | File                                    | Specialty                                                                                                                              |
+|---------------------------|-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| **Ultra-Think** (Default) | `.agents/sub-agents/ultra-think.md`     | **Default for all SDLC tasks**: Coding, refactoring, architecture, debugging, testing. Emphasizes craftsmanship and elegant solutions. |
+| Project Manager           | `.agents/sub-agents/project-manager.md` | PRD creation, task generation, progress tracking                                                                                       |
 
 ---
 
 ### 🛠️ Skills (Atomic Knowledge)
 
-| Skill | File | Description |
-|-------|------|-------------|
-| Git | `.agent/skills/git.md` | Standard Git commands and conventions |
-| Database | `.agent/skills/db.md` | SQL queries and migrations |
-| Testing | `.agent/skills/test.md` | Jest, Playwright, and testing patterns |
-| Review Checklist | `.agent/skills/review-checklist.md` | PR review checklist |
+| Skill          | File                                     | Description                                |
+|----------------|------------------------------------------|--------------------------------------------|
+| Create PRD     | `.agents/skills/create-prd/SKILL.md`     | Create Product Requirements Documents      |
+| Generate Tasks | `.agents/skills/generate-tasks/SKILL.md` | Generate step-by-step task lists from PRDs |
 
 ---
 
@@ -59,9 +45,10 @@ Choose the right agent for your task:
 
 1. **Always read `constitution.md` first** — it defines what you can and cannot do
 2. **Check `plan.md`** — understand the current context before acting
-3. **Follow the workflow** — don't skip steps
-4. **Use skills as reference** — they contain battle-tested patterns
-5. **Stay in your lane** — each sub-agent has a specific role
+3. **Use skills as reference** — they contain battle-tested patterns
+4. **Stay in your lane** — each sub-agent has a specific role
+5. **Default to Ultra-Think** — For any SDLC task (coding, refactoring, architecture, debugging, testing), use the
+   Ultra-Think sub-agent unless a more specialized agent is explicitly needed
 
 ---
 
@@ -77,17 +64,7 @@ Choose the right agent for your task:
           ▼                   ▼                   ▼
 ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
 │   GOVERNANCE    │ │   SUB-AGENTS    │ │     SKILLS      │
-│  constitution   │ │   qa.md         │ │   git.md        │
-│  plan.md        │ │   devops.md     │ │   db.md         │
-│                 │ │   tech-lead.md  │ │   test.md       │
+│  constitution   │ │  ultra-think    │ │   create-prd    │
+│     plan.md     │ │ project-manager │ │ generate-tasks  │
 └─────────────────┘ └─────────────────┘ └─────────────────┘
-                              │
-                              ▼
-                    ┌─────────────────┐
-                    │    WORKFLOWS    │
-                    │  feature-dev    │
-                    │  bug-fix        │
-                    │  deploy         │
-                    │  pr-review      │
-                    └─────────────────┘
 ```

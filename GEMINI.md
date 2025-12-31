@@ -17,9 +17,8 @@ Before performing any task, you MUST:
 - **Entry Point**: `AGENTS.md`
 - **Rules**: `.specify/memory/constitution.md`
 - **Current Plan**: `.specify/memory/plan.md`
-- **Sub-Agents**: `.agent/sub-agents/`
-- **Skills**: `.agent/skills/`
-- **Workflows**: `.agent/workflows/`
+- **Sub-Agents**: `.agents/sub-agents/`
+- **Skills**: `.agents/skills/`
 
 ---
 

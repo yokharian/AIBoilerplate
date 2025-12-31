@@ -14,7 +14,7 @@
 
 <br />
 
-*One source of truth for **Cursor, Claude Code, GitHub Copilot, Gemini, Amazon Q,** and **16+ AI coding assistants.***
+*One source of truth for **Cursor, Claude Code, GitHub Copilot, Gemini, Amazon Q,** and **14+ AI coding assistants.***
 
 <br />
 
@@ -39,7 +39,7 @@ We're in the era of **Multi-Vendor AI Development**. Your team might be using:
 <td align="center">🐙<br/><b>GitHub Copilot</b></td>
 <td align="center">💎<br/><b>Gemini CLI</b></td>
 <td align="center">☁️<br/><b>Amazon Q</b></td>
-<td align="center">➕<br/><b>13 more...</b></td>
+<td align="center">➕<br/><b>14 more...</b></td>
 </tr>
 </table>
 
@@ -59,7 +59,8 @@ We're in the era of **Multi-Vendor AI Development**. Your team might be using:
    conventions      conventions      conventions      conventions
 ```
 
-You end up with **duplicated rules**, **conflicting instructions**, and AI assistants that **hallucinate different project conventions**.
+You end up with **duplicated rules**, **conflicting instructions**, and AI assistants that **hallucinate different
+project conventions**.
 
 <br />
 
@@ -109,28 +110,28 @@ Every vendor-specific config contains just **one instruction**:
 │
 ├── 🎯 AGENTS.md                      ← THE HUB: Entry point for all AI agents
 │
-├── 📂 .agent/
+├── 📂 .agents/
 │   │
 │   ├── 📚 skills/                ← KNOWLEDGE (Atomic, Reusable)
-│   │   ├── git.md                   "Here are our Git commands"
-│   │   ├── db.md                    "Here's how to run migrations"
-│   │   ├── test.md                  "Here's how to run tests"
-│   │   └── review-checklist.md      "Here's the PR checklist"
-│   │
-│   ├── 🔄 workflows/             ← PROCESSES (Step-by-step)
-│   │   ├── feature-dev.md           Plan → Code → Test
-│   │   ├── bug-fix.md               Reproduce → Fix → Verify
-│   │   ├── deploy.md                Lint → Build → Ship
-│   │   └── pr-review.md             Fetch → Review → Approve
+│   │   ├── create-prd/
+│   │   │   └── SKILL.md             "Create Product Requirements Documents"
+│   │   └── generate-tasks/
+│   │       └── SKILL.md             "Generate task lists from PRDs"
 │   │
 │   └── 🎭 sub-agents/            ← PERSONAS (Specialized Roles)
-│       ├── qa.md                    "I am the QA Engineer"
-│       ├── devops.md                "I am the DevOps Engineer"
-│       └── tech-lead.md             "I am the Tech Lead"
+│       ├── ultra-think.md           "Default for all SDLC tasks"
+│       └── project-manager.md       "I am the Project Manager"
 │
-├── 📂 .specify/memory/           ← GOVERNANCE (The Law)
-│   ├── constitution.md              Tech Stack & Rules
-│   └── plan.md                      Current Tasks & Sprint
+├── 📂 .specify/
+│   │
+│   ├── 📂 memory/               ← GOVERNANCE (The Law)
+│   │   ├── constitution.md          Tech Stack & Rules
+│   │   └── plan.md                  Current Tasks & Sprint
+│   │
+│   └── 📂 features/            ← FEATURE DOCUMENTATION
+│       └── 📂 [feature-name]/
+│           ├── prd.md               Product Requirements Document
+│           └── tasks.md             Task list for implementation
 │
 └── 📂 [Pointer Files]            ← REDIRECTORS (Thin Wrappers)
     ├── .cursorrules                 → "Read AGENTS.md"
@@ -186,7 +187,7 @@ Cloud:    AWS
 
 ### Step 3️⃣ &nbsp; Set Your Plan
 
-Edit `.specify/memory/plan.md`:
+The `project-manager` sub-agent automatically maintains `.specify/memory/plan.md` as you work through features. However, you can also manually edit it to set initial sprint goals:
 
 ```markdown
 ## Current Sprint: User Authentication
@@ -198,6 +199,8 @@ Edit `.specify/memory/plan.md`:
 ### Up Next
 - [ ] Two-factor authentication
 ```
+
+**Note:** When you create PRDs and generate tasks using the `project-manager` sub-agent, it will automatically update this plan file with progress, moving tasks between sections and updating metrics as work progresses.
 
 </td>
 </tr>
@@ -223,31 +226,78 @@ Open your project in **any AI-powered IDE**. The AI will automatically:
 
 <br />
 
+## Feature Development Workflow
+
+Build features step-by-step with AI: define requirements, plan tasks, and implement iteratively.
+
+### Quick Guide
+
+**1. Create a PRD** (Product Requirements Document)
+
+```text
+Use @.agents/sub-agents/project-manager.md
+I want to build a feature: [Describe your feature]
+```
+
+The PRD is saved to `.specify/features/[feature-name]/prd.md`.
+
+**2. Generate Tasks**
+
+```text
+Take @.specify/features/my-feature/prd.md and generate tasks using @.agents/skills/generate-tasks/SKILL.md
+```
+
+Tasks are saved to `.specify/features/[feature-name]/tasks.md`.
+
+**3. Implement Tasks**
+
+```text
+Please start on task 1.1 from @.specify/features/my-feature/tasks.md
+```
+
+The AI will implement one task at a time. Review and approve each change before moving to the next task.
+
+**4. Track Progress**
+
+Tasks are automatically marked complete, and `.specify/memory/plan.md` updates automatically.
+
+### Tips
+
+- Be specific when describing features
+- Use `project-manager` for planning, `ultra-think` (default) for coding
+- Review each task before approving the next one
+
+<br />
+
+---
+
+<br />
+
 ## 🔌 Supported AI Tools
 
 <div align="center">
 
-| IDE / CLI | Config File | Status |
-|:---------:|:-----------:|:------:|
-| **Cursor** | `.cursorrules` | ✅ |
-| **Windsurf** | `.windsurfrules` | ✅ |
-| **Roo Code / Cline** | `.clinerules` | ✅ |
-| **GitHub Copilot** | `.github/copilot-instructions.md` | ✅ |
-| **Claude Code** | `CLAUDE.md` | ✅ |
-| **Gemini CLI** | `GEMINI.md` | ✅ |
-| **Amazon Q** | `AMAZON_Q.md` | ✅ |
-| **Auggie CLI** | `.auggie.md` | ✅ |
-| **CodeBuddy** | `.codebuddy` | ✅ |
-| **Qoder** | `.qoder/context.md` | ✅ |
-| **OpenCode** | `.opencode` | ✅ |
-| **Amp** | `.amp.md` | ✅ |
-| **Kilo Code** | `.kilo` | ✅ |
-| **Qwen Code** | `.qwen` | ✅ |
-| **IBM Bob** | `.bob/config` | ✅ |
-| **Jules** | `.jules` | ✅ |
-| **SHAI** | `.shai` | ✅ |
-| **Codex CLI** | `CODEX.md` | ✅ |
-| **Goose** | `GOOSE.md` | ✅ |
+|      IDE / CLI       |            Config File            | Status |
+|:--------------------:|:---------------------------------:|:------:|
+|      **Cursor**      |          `.cursorrules`           |   ✅    |
+|     **Windsurf**     |         `.windsurfrules`          |   ✅    |
+| **Roo Code / Cline** |           `.clinerules`           |   ✅    |
+|  **GitHub Copilot**  | `.github/copilot-instructions.md` |   ✅    |
+|   **Claude Code**    |            `CLAUDE.md`            |   ✅    |
+|    **Gemini CLI**    |            `GEMINI.md`            |   ✅    |
+|     **Amazon Q**     |           `AMAZON_Q.md`           |   ✅    |
+|    **Auggie CLI**    |           `.auggie.md`            |   ✅    |
+|    **CodeBuddy**     |           `.codebuddy`            |   ✅    |
+|      **Qoder**       |        `.qoder/context.md`        |   ✅    |
+|     **OpenCode**     |            `.opencode`            |   ✅    |
+|       **Amp**        |             `.amp.md`             |   ✅    |
+|    **Kilo Code**     |              `.kilo`              |   ✅    |
+|    **Qwen Code**     |              `.qwen`              |   ✅    |
+|     **IBM Bob**      |           `.bob/config`           |   ✅    |
+|      **Jules**       |             `.jules`              |   ✅    |
+|       **SHAI**       |              `.shai`              |   ✅    |
+|    **Codex CLI**     |            `CODEX.md`             |   ✅    |
+|      **Goose**       |            `goosehints`             |   ✅    |
 
 </div>
 
@@ -261,10 +311,9 @@ Open your project in **any AI-powered IDE**. The AI will automatically:
 
 <table>
 <tr>
-<th width="25%">📚 Skills</th>
-<th width="25%">🔄 Workflows</th>
-<th width="25%">🎭 Sub-Agents</th>
-<th width="25%">📜 Governance</th>
+<th width="33%">📚 Skills</th>
+<th width="33%">🎭 Sub-Agents</th>
+<th width="33%">📜 Governance</th>
 </tr>
 <tr>
 <td valign="top">
@@ -274,25 +323,15 @@ Open your project in **any AI-powered IDE**. The AI will automatically:
 Each skill is a reusable piece of domain knowledge.
 
 ```
-git.md
-├─ Branch naming
-├─ Commit format
-└─ PR process
-```
+create-prd/
+├─ PRD structure
+├─ Clarifying questions
+└─ Requirements format
 
-</td>
-<td valign="top">
-
-**Step-by-step processes**
-
-Workflows chain skills into complete procedures.
-
-```
-feature-dev.md
-├─ Step 1: Plan
-├─ Step 2: Code
-└─ Step 3: Test ↗️
-         └── test.md
+generate-tasks/
+├─ Task breakdown
+├─ Sub-task generation
+└─ Progress tracking
 ```
 
 </td>
@@ -300,13 +339,19 @@ feature-dev.md
 
 **Specialized personas**
 
-Sub-agents are experts that use specific skills & workflows.
+Sub-agents are experts that use specific skills.
 
 ```
-qa.md
-├─ Uses: test.md
-├─ Uses: bug-fix.md
-└─ Focus: Quality
+ultra-think.md (default)
+├─ Focus: SDLC tasks
+├─ Coding, refactoring
+├─ Architecture, debugging
+└─ Testing, craftsmanship
+
+project-manager.md
+├─ Uses: create-prd
+├─ Uses: generate-tasks
+└─ Focus: Feature development
 ```
 
 </td>
@@ -418,55 +463,31 @@ Before performing any task, you MUST:
 
 <br />
 
-1. Create a file in `.agent/skills/`
-2. Start with a tagline: `> Here is how to [do X].`
-3. Add commands, conventions, examples
-4. Reference it from relevant workflows
+1. Create a directory in `.agents/skills/` (e.g., `my-skill/`)
+2. Create a `SKILL.md` file inside the directory
+3. Follow the format of existing skills (see `.agents/skills/create-prd/SKILL.md` for reference)
+4. Include metadata, goal, process, and output format
 
 **Example:**
 
 ```markdown
-# Docker Skill
+---
+name: my-skill
+description: Brief description of what this skill does
+---
 
-> Here is how to build and run containers.
+# My Skill
 
-## Commands
+## Goal
+To accomplish X...
 
-\`\`\`bash
-docker build -t myapp .
-docker run -p 3000:3000 myapp
-\`\`\`
-```
+## Process
+1. Step one
+2. Step two
 
-</details>
-
-<details>
-<summary><b>🔄 Adding a New Workflow</b></summary>
-
-<br />
-
-1. Create a file in `.agent/workflows/`
-2. Define numbered steps
-3. Reference skills with links
-4. Keep it action-oriented
-
-**Example:**
-
-```markdown
-# Hotfix Workflow
-
-> Step 1: Branch. Step 2: Fix. Step 3: Deploy.
-
-## Step 1: Create Hotfix Branch
-
-Reference: `.agent/skills/git.md`
-
-\`\`\`bash
-git checkout -b hotfix/critical-issue main
-\`\`\`
-
-## Step 2: Apply Fix
-...
+## Output
+- Format: Markdown
+- Location: `/output/`
 ```
 
 </details>
@@ -476,10 +497,10 @@ git checkout -b hotfix/critical-issue main
 
 <br />
 
-1. Create a file in `.agent/sub-agents/`
+1. Create a file in `.agents/sub-agents/`
 2. Define the persona and role
-3. List which skills and workflows it uses
-4. Add specific instructions
+3. List which skills it uses
+4. Add specific instructions and workflow
 
 **Example:**
 
@@ -489,12 +510,17 @@ git checkout -b hotfix/critical-issue main
 > I am the Security Engineer. I review code for vulnerabilities.
 
 ## My Skills
-- `.agent/skills/review-checklist.md`
+- `.agents/skills/security-audit/SKILL.md`
 
 ## My Focus
 - OWASP Top 10
 - Input validation
 - Authentication flows
+
+## My Workflow
+1. Review code for security issues
+2. Generate security report
+3. Recommend fixes
 ```
 
 </details>
