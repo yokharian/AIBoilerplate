@@ -14,7 +14,7 @@
 
 <br />
 
-*One source of truth for **Cursor, Claude Code, GitHub Copilot, Gemini, Amazon Q,** and **16+ AI coding assistants.***
+*One source of truth for **Cursor, Claude Code, GitHub Copilot, Gemini, Amazon Q,** and **14+ AI coding assistants.***
 
 <br />
 
@@ -39,7 +39,7 @@ We're in the era of **Multi-Vendor AI Development**. Your team might be using:
 <td align="center">🐙<br/><b>GitHub Copilot</b></td>
 <td align="center">💎<br/><b>Gemini CLI</b></td>
 <td align="center">☁️<br/><b>Amazon Q</b></td>
-<td align="center">➕<br/><b>13 more...</b></td>
+<td align="center">➕<br/><b>14 more...</b></td>
 </tr>
 </table>
 
@@ -119,6 +119,7 @@ Every vendor-specific config contains just **one instruction**:
 │   │       └── SKILL.md             "Generate task lists from PRDs"
 │   │
 │   └── 🎭 sub-agents/            ← PERSONAS (Specialized Roles)
+│       ├── ultra-think.md           "Default for all SDLC tasks"
 │       └── project-manager.md       "I am the Project Manager"
 │
 ├── 📂 .specify/memory/           ← GOVERNANCE (The Law)
@@ -317,6 +318,7 @@ While it's not always perfect, this method has proven to be a very reliable way 
 
 * **`.agents/skills/create-prd/SKILL.md`**: Guides the AI in generating a Product Requirement Document for your feature.
 * **`.agents/skills/generate-tasks/SKILL.md`**: Takes a PRD markdown file as input and helps the AI break it down into a detailed, step-by-step implementation task list.
+* **`.agents/sub-agents/ultra-think.md`**: The default sub-agent for all SDLC tasks (coding, refactoring, architecture, debugging, testing). Emphasizes craftsmanship and elegant solutions.
 * **`.agents/sub-agents/project-manager.md`**: The Project Manager sub-agent that orchestrates the PRD and task generation workflow.
 * **`AGENTS.md`**: The central hub that routes AI assistants to the appropriate sub-agents and skills.
 * **`.specify/memory/constitution.md`**: Defines your tech stack, coding standards, and project rules.
@@ -354,7 +356,7 @@ While it's not always perfect, this method has proven to be a very reliable way 
 |      **Jules**       |             `.jules`              |   ✅    |
 |       **SHAI**       |              `.shai`              |   ✅    |
 |    **Codex CLI**     |            `CODEX.md`             |   ✅    |
-|      **Goose**       |            `GOOSE.md`             |   ✅    |
+|      **Goose**       |            `goosehints`             |   ✅    |
 
 </div>
 
@@ -399,6 +401,12 @@ generate-tasks/
 Sub-agents are experts that use specific skills.
 
 ```
+ultra-think.md (default)
+├─ Focus: SDLC tasks
+├─ Coding, refactoring
+├─ Architecture, debugging
+└─ Testing, craftsmanship
+
 project-manager.md
 ├─ Uses: create-prd
 ├─ Uses: generate-tasks

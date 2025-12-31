@@ -25,18 +25,19 @@
 
 Choose the right agent for your task:
 
-| Agent           | File                                    | Specialty                                    |
-|-----------------|-----------------------------------------|----------------------------------------------|
-| Project Manager | `.agents/sub-agents/project-manager.md` | PRD creation, task generation, progress tracking |
+| Agent                     | File                                    | Specialty                                                                                                                              |
+|---------------------------|-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| **Ultra-Think** (Default) | `.agents/sub-agents/ultra-think.md`     | **Default for all SDLC tasks**: Coding, refactoring, architecture, debugging, testing. Emphasizes craftsmanship and elegant solutions. |
+| Project Manager           | `.agents/sub-agents/project-manager.md` | PRD creation, task generation, progress tracking                                                                                       |
 
 ---
 
 ### 🛠️ Skills (Atomic Knowledge)
 
-| Skill         | File                              | Description                                    |
-|---------------|-----------------------------------|------------------------------------------------|
-| Create PRD    | `.agents/skills/create-prd/SKILL.md` | Create Product Requirements Documents         |
-| Generate Tasks | `.agents/skills/generate-tasks/SKILL.md` | Generate step-by-step task lists from PRDs   |
+| Skill          | File                                     | Description                                |
+|----------------|------------------------------------------|--------------------------------------------|
+| Create PRD     | `.agents/skills/create-prd/SKILL.md`     | Create Product Requirements Documents      |
+| Generate Tasks | `.agents/skills/generate-tasks/SKILL.md` | Generate step-by-step task lists from PRDs |
 
 ---
 
@@ -46,6 +47,8 @@ Choose the right agent for your task:
 2. **Check `plan.md`** — understand the current context before acting
 3. **Use skills as reference** — they contain battle-tested patterns
 4. **Stay in your lane** — each sub-agent has a specific role
+5. **Default to Ultra-Think** — For any SDLC task (coding, refactoring, architecture, debugging, testing), use the
+   Ultra-Think sub-agent unless a more specialized agent is explicitly needed
 
 ---
 
@@ -61,7 +64,7 @@ Choose the right agent for your task:
           ▼                   ▼                   ▼
 ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
 │   GOVERNANCE    │ │   SUB-AGENTS    │ │     SKILLS      │
-│  constitution   │ │ project-manager │ │  create-prd     │
-│  plan.md        │ │                 │ │  generate-tasks │
+│  constitution   │ │  ultra-think    │ │   create-prd    │
+│     plan.md     │ │ project-manager │ │ generate-tasks  │
 └─────────────────┘ └─────────────────┘ └─────────────────┘
 ```
