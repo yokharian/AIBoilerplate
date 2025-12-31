@@ -68,7 +68,6 @@ Week 2: Enhancement
 ## 🔗 Related Documents
 
 - Constitution: `.specify/memory/constitution.md`
-- Testing Guide: `.agents/skills/test.md`
 
 ---
 
