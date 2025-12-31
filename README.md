@@ -122,13 +122,16 @@ Every vendor-specific config contains just **one instruction**:
 │       ├── ultra-think.md           "Default for all SDLC tasks"
 │       └── project-manager.md       "I am the Project Manager"
 │
-├── 📂 .specify/memory/           ← GOVERNANCE (The Law)
-│   ├── constitution.md              Tech Stack & Rules
-│   └── plan.md                      Current Tasks & Sprint
-│
-├── 📂 tasks/                      ← OUTPUT (Generated Documents)
-│   ├── prd-[feature-name].md        PRD documents
-│   └── tasks-[feature-name].md       Task lists
+├── 📂 .specify/
+│   │
+│   ├── 📂 memory/               ← GOVERNANCE (The Law)
+│   │   ├── constitution.md          Tech Stack & Rules
+│   │   └── plan.md                  Current Tasks & Sprint
+│   │
+│   └── 📂 features/            ← FEATURE DOCUMENTATION
+│       └── 📂 [feature-name]/
+│           ├── prd.md               Product Requirements Document
+│           └── tasks.md             Task list for implementation
 │
 └── 📂 [Pointer Files]            ← REDIRECTORS (Thin Wrappers)
     ├── .cursorrules                 → "Read AGENTS.md"
@@ -260,13 +263,13 @@ You can create a lightweight PRD directly within your AI tool of choice:
 
 #### 2. Generate Your Task List from the PRD
 
-With your PRD drafted (e.g., `prd-MyFeature.md`), the next step is to generate a detailed, step-by-step implementation plan for your AI Developer.
+With your PRD drafted (e.g., `.specify/features/my-feature/prd.md`), the next step is to generate a detailed, step-by-step implementation plan for your AI Developer.
 
 1. Ensure you have `generate-tasks` skill accessible (`.agents/skills/generate-tasks/SKILL.md`).
 2. In your AI tool, use the PRD to create tasks:
 
     ```text
-    Now take @prd-MyFeature.md and create tasks using @.agents/skills/generate-tasks/SKILL.md
+    Now take @.specify/features/my-feature/prd.md and create tasks using @.agents/skills/generate-tasks/SKILL.md
     ```
 
 #### 3. Examine Your Task List
@@ -308,7 +311,7 @@ While it's not always perfect, this method has proven to be a very reliable way 
 <summary><b>💪 Tips for Success</b></summary>
 
 * **Be Specific:** The more context and clear instructions you provide (both in your initial feature description and any clarifications), the better the AI's output will be.
-* **Correct File Tagging:** Always ensure you're accurately tagging the PRD filename (e.g., `@prd-MyFeature.md`) when generating tasks.
+* **Correct File Tagging:** Always ensure you're accurately tagging the PRD file path (e.g., `@.specify/features/my-feature/prd.md`) when generating tasks.
 * **Patience and Iteration:** AI is a powerful tool, but it's not magic. Be prepared to guide, correct, and iterate. This workflow is designed to make that iteration process smoother.
 
 </details>

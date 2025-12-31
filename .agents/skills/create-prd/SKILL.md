@@ -14,7 +14,7 @@ To guide the creation of a detailed Product Requirements Document (PRD) in Markd
 1. **Receive Initial Prompt:** The user provides a brief description or request for a new feature or functionality.
 2. **Ask Clarifying Questions:** Before writing the PRD, you *must* ask only the most essential clarifying questions needed to write a clear PRD. Limit questions to 3-5 critical gaps in understanding. The goal is to understand the "what" and "why" of the feature, not necessarily the "how" (which the developer will figure out). Make sure to provide options in letter/number lists so the user can respond easily with their selections.
 3. **Generate PRD:** Based on the initial prompt and the user's answers to the clarifying questions, generate a PRD using the structure outlined below.
-4. **Save PRD:** Save the generated document as `prd-[feature-name].md` inside the `/tasks` directory.
+4. **Save PRD:** Save the generated document as `prd.md` inside `.specify/features/[feature-name]/` directory. Create the feature directory if it doesn't exist.
 
 ## Clarifying Questions (Guidelines)
 
@@ -83,8 +83,9 @@ and avoid jargon where possible. Provide enough detail for them to understand th
 ## Output
 
 * **Format:** Markdown (`.md`)
-* **Location:** `/tasks/`
-* **Filename:** `prd-[feature-name].md`
+* **Location:** `.specify/features/[feature-name]/`
+* **Filename:** `prd.md`
+* **Full Path:** `.specify/features/[feature-name]/prd.md`
 
 ## Final instructions
 

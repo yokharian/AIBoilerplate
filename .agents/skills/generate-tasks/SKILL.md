@@ -12,8 +12,10 @@ To guide the creation of a detailed, step-by-step task list in Markdown format b
 ## Output
 
 - **Format:** Markdown (`.md`)
-- **Location:** `/tasks/`
-- **Filename:** `tasks-[feature-name].md` (e.g., `tasks-user-profile-editing.md`)
+- **Location:** `.specify/features/[feature-name]/`
+- **Filename:** `tasks.md`
+- **Full Path:** `.specify/features/[feature-name]/tasks.md`
+- **Note:** Use the same `[feature-name]` as the corresponding PRD file
 
 ## Process
 
@@ -24,7 +26,7 @@ To guide the creation of a detailed, step-by-step task list in Markdown format b
 5. **Phase 2: Generate Sub-Tasks:** Once the user confirms, break down each parent task into smaller, actionable sub-tasks necessary to complete the parent task. Ensure sub-tasks logically follow from the parent task and cover the implementation details implied by the requirements.
 6. **Identify Relevant Files:** Based on the tasks and requirements, identify potential files that will need to be created or modified. List these under the `Relevant Files` section, including corresponding test files if applicable.
 7. **Generate Final Output:** Combine the parent tasks, sub-tasks, relevant files, and notes into the final Markdown structure.
-8. **Save Task List:** Save the generated document in the `/tasks/` directory with the filename `tasks-[feature-name].md`, where `[feature-name]` describes the main feature or task being implemented (e.g., if the request was about user profile editing, the output is `tasks-user-profile-editing.md`).
+8. **Save Task List:** Save the generated document as `tasks.md` in `.specify/features/[feature-name]/` directory, where `[feature-name]` matches the feature name used in the corresponding PRD. Create the feature directory if it doesn't exist. The full path will be `.specify/features/[feature-name]/tasks.md`.
 
 ## Output Format
 
