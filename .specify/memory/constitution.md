@@ -6,6 +6,8 @@
 
 ## 🏗️ Tech Stack
 
+> ⚠️ **IMPORTANT**: The following tech stack is just an example. **You must delete these examples and replace them with your actual tech stack before continuing.**
+
 ### Frontend
 - **Framework**: React 18+ with TypeScript
 - **Styling**: Tailwind CSS
@@ -27,6 +29,8 @@
 ---
 
 ## 📏 Coding Standards
+
+> ⚠️ **IMPORTANT**: The following coding standards are just examples. **You must delete these examples and replace them with your actual coding standards before continuing.**
 
 ### General Rules
 
@@ -115,4 +119,3 @@ src/
 ---
 
 *This constitution is non-negotiable. All code must comply.*
-
